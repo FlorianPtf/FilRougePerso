@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    {% for rub in rubrique %}
+        <li><a href="{{ path('sousRubrique', {'id' : rub.id}) }}">
+            {{ rub.nom }}
+        </a></li>
+    {% endfor %}
+{% endblock %}
+
+
+{% block rubrique %}
+    <div class="mainrubrique">
+        <div class="maintitle">
+            <h2>Nos Catégories</h2>
+        </div>
+        <div class="cardcomplete">
+    {% for rub in rubrique %}
+    <div class="cardrubrique">
+    <a href="{{ path('sousRubrique', {'id' : rub.id}) }}">
+        <div class="cardcontent">
+                    <img src="upload/img/rubrique/{{rub.photo}}">
+                <h2> {{ rub.nom }} </h2>
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+            </div>
+    </div>
+{% endblock %}
+
+
+{% block produitphare %}
+    <div class="mainproduitphare">
+        <div class="maintitle">
+            <h2>Nos Produits Phares</h2>
+        </div>
+
+        <div class="cardcompletephare">
+            {% for rub in rubrique %}
+                <div class="cardphare1">
+                    <a href="{{ path('sousRubrique', {'id' : rub.id}) }}">
+                    <div class="cardphare2">
+                            <img src="upload/img/rubrique/{{rub.photo}}">
+                            <h2> Nom produit</h2>
+                    </div> 
+                    <div class="cardphare3">
+                        <h3> Prix Produit </h3>      
+                    </div> 
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+

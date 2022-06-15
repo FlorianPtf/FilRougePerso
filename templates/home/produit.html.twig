@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+{% for pro in produit %}
+    <div>
+            <li><a href="#">{{ pro.getLibelleLong }}</a></li>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
+
+
+{% block rubrique %}
+    <div class="mainrubrique">
+        <div class="maintitle">
+            <h2>Nos Catégories</h2>
+        </div>
+        <div class="cardcomplete">
+    {% for pro in produit %}
+        <div class="cardrubrique">
+            <a href="{{ path('produit', {'id':pro.getLibelleLong}) }}">
+                <div class="cardcontent">
+                            <img src="/upload/img/produit/{{pro.photo}}">
+                        <h2> {{ pro.getLibelleLong }} </h2>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+            </div>
+    </div>
+{% endblock %}

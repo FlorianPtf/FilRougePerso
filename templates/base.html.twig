@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}VillageGreen{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+                    {{ encore_entry_link_tags('app') }}
+                    <link rel="stylesheet" href="/css/styles.css">
+        {% endblock %}
+
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+<body>
+<div class="bg">
+    <div class="container1">
+        <div class="navgauche">
+        <ul>
+            <li><a href="{{ path('rubrique') }}" ><i class="fa-solid fa-house"></i></a></li>
+            <li><i class="fa-solid fa-house" id="homehidden"></i></li>
+        </ul>
+        </div>
+
+        <div class="navmilieu">
+            <a href="{{ path('rubrique') }}">Village Green</a>
+            <input type="text" class="search" placeholder="Rechercher">
+        </div>
+        
+        <div class="navdroite">
+            <ul>
+                <li><a href="#" ><i class="fa-solid fa-user"></i></a></li>          
+                <li><a href="#" ><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rubriques">
+        <ul>
+            {% block body %}
+            {% endblock %}
+        </ul>
+    </div>
+
+
+            {% block rubrique %}
+            {% endblock %}
+
+
+            {% block produitphare %}
+            {% endblock %}
+
+
+    <div class="footer">
+        <div class="footergauche">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i> Information légales </a></li>            
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i> Politiques de confidentialité</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-pin"></i> 73 Boulevard Bertin, 44432 Tessier</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i> VillageGreen@exemple.com</a></li>
+            </ul>
+        </div>
+
+        <div class="footermilieu">
+            <ul>
+                <li><i class="fa-brands fa-paypal"></i></li>            
+                <li><i class="fa-brands fa-cc-visa"></i></li>
+            </ul>    
+            <ul>
+                <li><i class="fa-brands fa-apple-pay"></i></li>
+                <li><i class="fa-brands fa-cc-mastercard"></i></li> 
+            </ul>
+            <ul>               
+                <li><i class="fa-brands fa-amazon-pay"></i></li>
+                <li><i class="fa-brands fa-cc-amex"></i></li>
+            </ul>
+        </div>
+    
+        <div class="footerdroite">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>            
+                <li><a href="#"><i class="fa-brands fa-snapchat"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>                
+            </ul>
+        </div>    
+    </div>
+
+
+
+        
+    </body>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/c1bbff1c35.js" crossorigin="anonymous"></script>
+
+</html>
