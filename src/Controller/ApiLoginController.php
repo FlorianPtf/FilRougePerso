@@ -19,11 +19,9 @@ class ApiLoginController extends AbstractController
              ], Response::HTTP_UNAUTHORIZED);
          }
          
-        $token = ...; // somehow create an API token for $user
-
         return $this->json([
-                'user'  => $user->getUserIdentifier(),
-                'token' => $token,
+                'message' => 'Welcome to your new controller!',
+                'path' => 'src/Controller/ApiLoginController.php',
         ]);
     }
 }
